@@ -46,29 +46,37 @@ git clone https://github.com/lhdeng-gh/MuKA.git
 ```
 ### train_examples.json should look like
 ```
-{'id': 0,
- 'images': ['VZ_Pearl_St_2018-03_jeh.jpg',
-  'retrieved_doc_1_img.png',
-  'retrieved_doc_2_img.png',
-  'retrieved_doc_3_img.png',
-  'retrieved_doc_4_img.png',
-  'retrieved_doc_5_img.png'],
- 'conversations': [
-{'from': 'human',
-   'value': '<image>
-\nQuestion: What building is bordered by this street to the southeast and Hanover Square to the northeast?
-\n
-\nRetrieved passages:\n1: <image>sample document text 1
-\n2: <image>sample document text 2
-\n3: <image>sample document text 3
-\n4: <image>sample document text 4
-\n5: <image>sample document text 5
-\n
-\nGiven the query image and question,\nalong with retrieved passages and their
-\nimages, identify the matched passages and
-\nuse them to provide a short answer to the
-\nquestion.'},
-  {'from': 'gpt', 'value': '1 Hanover Square'}
-]
+train_examples[0] = {
+    'id': 0,
+    'images': [
+        'VZ_Pearl_St_2018-03_jeh.jpg',
+        'retrieved_doc_1_img.png',
+        'retrieved_doc_2_img.png',
+        'retrieved_doc_3_img.png',
+        'retrieved_doc_4_img.png',
+        'retrieved_doc_5_img.png'
+    ],
+    'conversations': [
+        {
+            'from': 'human',
+            'value': (
+                '<image>\n'
+                'Question: What building is bordered by this street to the southeast and '
+                'Hanover Square to the northeast?\n\n'
+                'Retrieved passages:\n'
+                '1: <image> sample document text 1\n'
+                '2: <image> sample document text 2\n'
+                '3: <image> sample document text 3\n'
+                '4: <image> sample document text 4\n'
+                '5: <image> sample document text 5\n\n'
+                'Given the query image and question, along with retrieved passages and their images, '
+                'identify the matched passages and use them to provide a short answer to the question.'
+            )
+        },
+        {
+            'from': 'gpt',
+            'value': '1 Hanover Square'
+        }
+    ]
 }
 ```
