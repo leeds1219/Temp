@@ -54,6 +54,20 @@ def load_pretrained_model(
     **kwargs,
 )
 
+def prepare_config_for_eval(config: PretrainedConfig, kwargs: dict):
+    try:
+        # compatible with deprecated config convention
+        if getattr(config, "vision_tower_cfg", None) is None:
+            config.vision_tower_cfg = config.mm_vision_tower
+    except AttributeError:
+        raise ValueError(f"Invalid configuration! Cannot find vision_tower in config:\n{config}")
+    
+    config.model_dtype = kwargs.pop("torch_dtype").__str__()
+    # siglip does not support device_map = "auto"
+    vision_tower_name = parse_model_name_or_path(config, "vision_tower")
+    if "siglip" in vision_tower_name.lower():
+        kwargs["device_map"] = "cuda" # TODO: should fix this
+
 # instead just use this for debug
 model_path = "/workspace/MuKA/VILA1.5-13b"
 config = AutoConfig.from_pretrained(model_path)
