@@ -14,6 +14,7 @@ bash environment_setup.sh vila15
 
 pip install numpy==1.26.4
 ```
+
 ## FLMR
 ```
 git clone https://github.com/LinWeizheDragon/FLMR
@@ -38,6 +39,33 @@ pip install ujson gitpython easydict ninja datasets transformers==4.49
 git clone https://github.com/lhdeng-gh/MuKA.git
 ```
 
+### To use VILA model
+```
+from vila_diffs.llava.model.builder import load_pretrained_model
+
+def load_pretrained_model(
+    model_path,
+    model_name,
+    model_base=None,
+    load_8bit=False,
+    load_4bit=False,
+    device_map="auto", # the function overides the device_map argument, so this argument basically does not work!!!
+    device="cuda",
+    **kwargs,
+)
+
+# instead just use this for debug
+model_path = "/workspace/MuKA/VILA1.5-13b"
+config = AutoConfig.from_pretrained(model_path)
+config.resume_path = model_path
+model = LlavaLlamaModel(
+    config=config,
+    low_cpu_mem_usage=True,
+    device_map="cuda:5"
+)
+tokenizer = model.tokenizer
+```
+
 ### doc_image_title2image.json should look like
 ```
 {
@@ -46,6 +74,7 @@ git clone https://github.com/lhdeng-gh/MuKA.git
   "WikiWeb_Juglans regia_1": "Noyer_centenaire_en_automne.JPG",
 }
 ```
+
 ### train_examples.json should look like
 ```
 train_examples[0] = {
