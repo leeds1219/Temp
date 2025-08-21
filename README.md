@@ -49,7 +49,7 @@ def load_pretrained_model(
     model_base=None,
     load_8bit=False,
     load_4bit=False,
-    device_map="auto", # the function overides the device_map argument, so this argument basically does not work!!!
+    device_map="auto", # the function overides the device_map argument internally, so this argument basically does not work!!!
     device="cuda",
     **kwargs,
 )
