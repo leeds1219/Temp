@@ -44,7 +44,7 @@ git clone https://github.com/lhdeng-gh/MuKA.git
   "WikiWeb_Juglans regia_1": "Noyer_centenaire_en_automne.JPG",
 }
 ```
-### ./train_examples.json should look like
+### train_examples.json should look like
 ```
 {'id': 0,
  'images': ['VZ_Pearl_St_2018-03_jeh.jpg',
@@ -55,7 +55,19 @@ git clone https://github.com/lhdeng-gh/MuKA.git
   'retrieved_doc_5_img.png'],
  'conversations': [
 {'from': 'human',
-   'value': '<image>\nQuestion: What building is bordered by this street to the southeast and Hanover Square to the northeast?\n\nRetrieved passages:\n1: <image>sample document text 1\n2: <image>sample document text 2\n3: <image>sample document text 3\n4: <image>sample document text 4\n5: <image>sample document text 5\n\nGiven the query image and question,\nalong with retrieved passages and their\nimages, identify the matched passages and\nuse them to provide a short answer to the\nquestion.'},
+   'value': '<image>
+\nQuestion: What building is bordered by this street to the southeast and Hanover Square to the northeast?
+\n
+\nRetrieved passages:\n1: <image>sample document text 1
+\n2: <image>sample document text 2
+\n3: <image>sample document text 3
+\n4: <image>sample document text 4
+\n5: <image>sample document text 5
+\n
+\nGiven the query image and question,\nalong with retrieved passages and their
+\nimages, identify the matched passages and
+\nuse them to provide a short answer to the
+\nquestion.'},
   {'from': 'gpt', 'value': '1 Hanover Square'}
 ]
 }
