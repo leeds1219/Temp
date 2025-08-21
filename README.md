@@ -11,6 +11,8 @@ apt-get update
 apt-get install -y wget
 
 bash environment_setup.sh vila15
+
+pip install numpy==1.26.4
 ```
 ## FLMR
 ```
