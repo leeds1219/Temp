@@ -15,7 +15,7 @@ bash environment_setup.sh vila15
 pip install numpy==1.26.4
 ```
 
-## double check if cu118 is installed or not, sometimes cu11.7 is installed, which does not support H100 (sm_90)
+double check if cu118 is installed or not, sometimes cu11.7 is installed, which does not support H100 (sm_90)
 ```
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
