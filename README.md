@@ -15,6 +15,11 @@ bash environment_setup.sh vila15
 pip install numpy==1.26.4
 ```
 
+## double check if cu118 is installed or not, sometimes cu11.7 is installed, which does not support H100 (sm_90)
+```
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+```
+
 ## FLMR
 ```
 git clone https://github.com/LinWeizheDragon/FLMR
