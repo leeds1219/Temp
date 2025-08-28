@@ -102,6 +102,26 @@ tokenizer = model.tokenizer
 
 ### train_examples.json should look like
 ```
+[
+  {
+    "id": "997bb945-628d-4724-b370-b84de974a19f",
+    "image": "part-000001/997bb945-628d-4724-b370-b84de974a19f.jpg",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nWrite a prompt for Stable Diffusion to generate this image."
+      },
+      {
+        "from": "gpt",
+        "value": "a beautiful painting of chernobyl by nekro, pascal blanche, john harris, greg rutkowski, sin jong hun, moebius, simon stalenhag. in style of cg art. ray tracing. cel shading. hyper detailed. realistic. ue 5. maya. octane render. "
+      },
+    ]
+  },
+  ...
+]
+```
+
+```
 train_examples[0] = {
     'id': 0,
     'images': [
