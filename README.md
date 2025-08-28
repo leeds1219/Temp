@@ -103,7 +103,7 @@ tokenizer = model.tokenizer
 ### train_examples.json should look like
 ```
 # The images dir is a relative dir of both query images & document images, should place the query images in the same place as M2KR images folder
-# Important! : need to truncate each document to 100 token!!! context limit issue
+# Important! : need to truncate each document to 100 token!!! context limit issue forgot to do this in this example
 
 {'id': 'EVQA_66',
  'images': ['inat/train/09426_Plantae_Tracheophyta_Magnoliopsida_Rosales_Rosaceae_Prunus_laurocerasus/26405447-125c-4f7c-8d90-6794214162cb.jpg',
