@@ -102,57 +102,16 @@ tokenizer = model.tokenizer
 
 ### train_examples.json should look like
 ```
-[
-  {
-    "id": "997bb945-628d-4724-b370-b84de974a19f",
-    "image": "part-000001/997bb945-628d-4724-b370-b84de974a19f.jpg",
-    "conversations": [
-      {
-        "from": "human",
-        "value": "<image>\nWrite a prompt for Stable Diffusion to generate this image."
-      },
-      {
-        "from": "gpt",
-        "value": "a beautiful painting of chernobyl by nekro, pascal blanche, john harris, greg rutkowski, sin jong hun, moebius, simon stalenhag. in style of cg art. ray tracing. cel shading. hyper detailed. realistic. ue 5. maya. octane render. "
-      },
-    ]
-  },
-  ...
-]
-```
+# The images dir is a relative dir of both query images & document images, should place the query images in the same place as M2KR images folder
 
-```
-train_examples[0] = {
-    'id': 0,
-    'images': [
-        'VZ_Pearl_St_2018-03_jeh.jpg',
-        'retrieved_doc_1_img.png',
-        'retrieved_doc_2_img.png',
-        'retrieved_doc_3_img.png',
-        'retrieved_doc_4_img.png',
-        'retrieved_doc_5_img.png'
-    ],
-    'conversations': [
-        {
-            'from': 'human',
-            'value': (
-                '<image>\n'
-                'Question: What building is bordered by this street to the southeast and '
-                'Hanover Square to the northeast?\n\n'
-                'Retrieved passages:\n'
-                '1: <image> sample document text 1\n'
-                '2: <image> sample document text 2\n'
-                '3: <image> sample document text 3\n'
-                '4: <image> sample document text 4\n'
-                '5: <image> sample document text 5\n\n'
-                'Given the query image and question, along with retrieved passages and their images, '
-                'identify the matched passages and use them to provide a short answer to the question.'
-            )
-        },
-        {
-            'from': 'gpt',
-            'value': '1 Hanover Square'
-        }
-    ]
-}
+{'id': 'EVQA_66',
+ 'images': ['inat/train/09426_Plantae_Tracheophyta_Magnoliopsida_Rosales_Rosaceae_Prunus_laurocerasus/26405447-125c-4f7c-8d90-6794214162cb.jpg',
+  'images/Fr%C3%BChling_bl%C3%BChender_Kirschenbaum.jpg',
+  'images/Hibiscus_Syriacus.JPG',
+  'images/Enemion_biternatum_Arkansas.jpg',
+  'images/Parsonsia_heterophylla_11.JPG',
+  'images/WikiWeb_Annona glabra_2.jpg'],
+ 'conversations': [{'from': 'human',
+   'value': '<image>\nQuestion: How do the of this plant seeds spread?\n\nRetrieved passages:\n1: <image> It has become naturalised widely. In some regions (such as the United Kingdom and the Pacific Northwest of North America), this species can be an invasive plant. Its rapid growth, coupled with its evergreen habit and its tolerance of drought and shade, often allow it to out-compete and kill off native plant species.  It is spread by birds, through the seeds in their droppings.\n2: <image> Most modern cultivars are virtually fruitless. The fruits of those that have them are green or brown, ornamentally unattractive 5-valved dehiscent capsules, which persist throughout much of the winter on older cultivars. They will eventually shatter over the course of the dormant season and spread their easily germinating seeds around the base of the parent plant, forming colonies with time.\n3: <image> The plant sends up evergreen basal leaves in the fall, flower stems in the spring, and goes dormant in late spring and early summer after the seed ripens.\nLeaves are twice or thrice compound with groups of three leaflets. Leaflets are smooth-edged, irregularly and deeply lobed twice or thrice, often with one to three secondary shallow lobes. Basal leaves are held on long stalks, and there are leaves arranged alternately up the flowering stems, with shorter stalks. All stems are reddish and hairless.\nThe root system is weakly rhizomatous, and occasionally produces small tubers. Plants spread over time to form thick colonies.\nThe flowering stems are 4 to 16 inches (10 to 40\xa0cm) high. Flowers are produced singly or in leafy racemes of two to four flowers, which means that there are leaves arranged alternately up the stems and flowers are in stems that come out of leaf axils. On either side of the leaf axils are two rounded stipules.\nThe flowers have five white petal-like sepals that are each 5.5–13.5\xa0mm (³⁄₁₆–⁹⁄₁₆\xa0in) long and 3.5–8.5\xa0mm (¹⁄₈–⁵⁄₁₆\xa0in) wide, 25-50 stamens with yellow pollen on the anthers, and three to six green carpels. If a carpel is fertilized, it develops into a beaked pod (follicle). When ripe, the pod splits open on one side to release several reddish-brown seeds.\n4: <image> There is little information available on the timeline and life cycle of this species. This plant flowers from September to March, followed by seed pods from February. Seeds are dispersed then by the wind.\nIf one wants to plant P. heterophylla in their garden, the optimal time to collect seeds is between February to April.\n5: <image> A. glabra thrives in wet environments. The seeds and fruit of this plant can be dispersed during wet seasons where they fall into swamps and rivers. This allows the seeds and fruits to spread to coastlines. A 2008 study found that A. glabra seeds can withstand floating in salt water and fresh water for up to 12 months. About 38% of those seeds can then germinate in soil, though A. glabra roots do not do well with constant flooding. Another study in 1998 found that even under intense flooding, the 12-month lifespan of A. glabra seedlings was unaffected; the growth rate of A. glabra trees did decrease however over a 6-month period. Compared to other Annona seeds and trees, the A. glabra is still more resilient to instances of flooding.\n\nGiven the query image and question, along with retrieved passages and their images, identify the matched passages and use them to provide a short answer to the question.'},
+  {'from': 'gpt', 'value': ' by birds'}]}
 ```
