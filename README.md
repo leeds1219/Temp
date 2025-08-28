@@ -89,6 +89,12 @@ tokenizer = model.tokenizer
 }
 ```
 
+### questions.jsonl should look like
+```
+{"question_id": "q1", "image": "cat.jpg", "text": "What is in the image?"}
+{"question_id": "q2", "image": ["dog1.jpg", "dog2.jpg"], "text": "<image> and <image>: Are they the same breed?"}
+```
+
 ### train_examples.json should look like
 ```
 train_examples[0] = {
