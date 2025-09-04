@@ -86,6 +86,7 @@ tokenizer = model.tokenizer
 ```
 
 ### doc_image_title2image.json should look like
+The code adds the root image folder to the img name.
 ```
 {
   "WikiWeb_Heracleum mantegazzianum_11": "Hera_Campana_Louvre_Ma2283.jpg",
