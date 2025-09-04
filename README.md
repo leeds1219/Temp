@@ -39,6 +39,32 @@ pip install -e .
 
 pip install ujson gitpython easydict ninja datasets transformers==4.49
 ```
+Should upgrade peft and accelerate to fit transformers==4.49.
+
+The original FLMR use 4.28. version.
+
+Also need to add num_items_in_batch=None argument in the PreFLMR Trainer's compute_loss function script.
+```
+class PreFLMRTrainer(Trainer):
+    # added , num_items_in_batch=None since transformers 4.49.0 requires this input
+    def compute_loss(self, model, inputs, num_items_in_batch=None, return_outputs=False):
+        outputs = model(**inputs, return_dict=True)
+        ib_loss = outputs["in_batch_negative_loss"]
+        outputs["loss"] = ib_loss
+
+        return (ib_loss, outputs) if return_outputs else ib_loss
+
+    # https://github.com/huggingface/transformers/blob/main/src/transformers/trainer.py#L3353C5-L3353C90
+    def save_model(self, output_dir=None, _internal_call: bool = False):
+        super().save_model(output_dir, _internal_call)
+        if output_dir is None:
+            output_dir = self.args.output_dir
+        
+        self.query_tokenizer.save_pretrained(os.path.join(output_dir, 'query_tokenizer'))
+        self.context_tokenizer.save_pretrained(os.path.join(output_dir, 'context_tokenizer'))
+```
+The recent HF trainer class requires this argument.
+
 ## MuKA
 ```
 git clone https://github.com/lhdeng-gh/MuKA.git
