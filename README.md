@@ -202,4 +202,11 @@ The code adds the root image folder to the img name.
 - The paths for images, datasets, and models will be organized and documented soon.  
   Due to time constraints, a complete organization has not yet been done, but the resources will be made available as soon as possible.  
   (Currently, some unorganized files are included for convenience.)
+  
+- Collected images follow the conventions of previous work:
+  - Supported file formats: `.png`, `.jpg`, `.jpeg`
+  - All images are resized such that the shortest side is 512 pixels
+  - Images are converted to RGBA format where applicable
+
+- If an image cannot be found via Wiki APIs, it is obtained using Google Lens for research purposes only.
 
