@@ -197,3 +197,6 @@ The code adds the root image folder to the img name.
 - Additional images included in this project were collected for research purposes using publicly available sources such as Wiki APIs.  
   These images are intended solely for academic and research use. The authors of this repository do not take responsibility for any other usage.
 
+- All collected images, datasets, and related files will be made available at:  
+  [Here](https://huggingface.co/datasets/Lee1219/WikiCrawl_2025_08_19)
+
