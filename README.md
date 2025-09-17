@@ -34,9 +34,9 @@ For other architectures, follow the installation instructions below.
 
 > Due to GitHub repository size limitations, it is not possible to upload all files.  
 > The following modifications have been applied manually and are included in this README.
-
 > Some modifications may have been inadvertently missed.  
 > If you encounter any issues, please feel free to open an issue on the repository, or fix them directly—your contributions are appreciated.
+> We used wandb for logging, please install wandb or remove the related codes.
 
 
 ## VILA
