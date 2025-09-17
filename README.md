@@ -28,7 +28,7 @@ bash environment_setup.sh vila15
 
 pip install numpy==1.26.4
 ```
-Ensure that CUDA 11.8 (cu118) is installed. Some systems may default to CUDA 11.7, which does not support H100 (sm_90).
+> Ensure that CUDA 11.8 (cu118) is installed. Some systems may default to CUDA 11.7, which does not support H100 (sm_90).
 ```
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
@@ -54,11 +54,11 @@ pip install ujson gitpython easydict ninja datasets transformers==4.49
 ```
 Notes:
 
-Upgrade peft and accelerate to ensure compatibility with transformers==4.49.
+> Upgrade peft and accelerate to ensure compatibility with transformers==4.49.
 
-FLMR originally uses transformers==4.28.
+> FLMR originally uses transformers==4.28.
 
-Add num_items_in_batch=None argument to the compute_loss method in PreFLMRTrainer to comply with the updated HF Trainer API:
+> Add num_items_in_batch=None argument to the compute_loss method in PreFLMRTrainer to comply with the updated HF Trainer API and use safe_serialization=False:
 ```
 class PreFLMRTrainer(Trainer):
     # added , num_items_in_batch=None since transformers 4.49.0 requires this input
@@ -78,7 +78,6 @@ class PreFLMRTrainer(Trainer):
         self.query_tokenizer.save_pretrained(os.path.join(output_dir, 'query_tokenizer'), safe_serialization=False) 
         self.context_tokenizer.save_pretrained(os.path.join(output_dir, 'context_tokenizer'), safe_serialization=False)
 ```
-
 
 ## MuKA
 ```
@@ -189,3 +188,12 @@ The code adds the root image folder to the img name.
     }
 }
 ```
+
+# Acknowledgements & Usage Disclaimer
+
+- This project incorporates substantial code and resources from the following repositories:  
+  [MuKA](https://github.com/lhdeng-gh/MuKA), [FLMR](https://github.com/LinWeizheDragon/FLMR), and [VILA 1.5](https://github.com/NVlabs/VILA). We sincerely thank the authors for their contributions.
+
+- Additional images included in this project were collected for research purposes using publicly available sources such as Wiki APIs.  
+  These images are intended solely for academic and research use. The authors of this repository do not take responsibility for any other usage.
+
