@@ -199,4 +199,7 @@ The code adds the root image folder to the img name.
 
 - All collected images, datasets, and related files will be made available at:  
   [Here](https://huggingface.co/datasets/Lee1219/WikiCrawl_2025_08_19)
+- The paths for images, datasets, and models will be organized and documented soon.  
+  Due to time constraints, a complete organization has not yet been done, but the resources will be made available as soon as possible.  
+  (Currently, some unorganized files are included for convenience.)
 
