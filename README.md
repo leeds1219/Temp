@@ -1,29 +1,10 @@
 # Guide
 ## Personal To-Do List
 
-- [ ] **Organize image paths**
-  - Convert all image paths to relative paths for easier usage.
-
-- [ ] **Prepare query & document datasets**
-  - Create zip files for query images and document images.
-  - Convert and organize text-based questions to be compatible with Hugging Face datasets.
-
-- [ ] **Add dataset statistics**
-  - Include stats such as number of examples, images, average lengths, etc.
-  - Add example entries to illustrate the dataset structure.
-
-- [ ] **Code cleaning and review**
-  - Check for typos and fix them.
-  - Clean up code formatting.
-  - Add or improve comments for clarity.
-
-- [ ] **Model handling**
-  - Ensure models can be loaded from pretrained checkpoints.
-  - Implement saving functionality for debugging and reproducibility.
-
-- [ ] **Update previous work instructions**
-  - Correct errors in instructions from prior works (MuKA, FLMR, VILA 1.5).
-  - Consolidate and clarify the setup guide for easier use.
+- [x] **Dataset**
+  - .
+- [ ] **Code**
+  - .
 
 ## Prerequisites
 
